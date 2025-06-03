@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Or a newer ES version like ES2022
+    "module": "commonjs", // Standard for Node.js with ts-node
+    "lib": ["ES2020"],
+    "strict": true,
+    "esModuleInterop": true, // **** THIS IS CRUCIAL ****
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node", // Important for how TS finds modules
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true, // Good for debugging
+    "allowSyntheticDefaultImports": true // Can sometimes help with interop
+  },
+  "include": ["src/**/*"], // Ensure this points to your source files
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

@@ -1,0 +1,178 @@
+/* parking-analytics-frontend/src/App.css */
+
+/* General App container styling (can also be in index.css if truly global) */
+.App {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  /* transition: background-color 0.3s ease; Optional: for theme changes */
+}
+
+/* Header specific styles */
+header {
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  padding: 20px 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em; /* Slightly larger */
+  font-weight: 600;
+}
+
+header p { /* For WebSocket status or subtitle */
+  font-size: 0.95em;
+  opacity: 0.85;
+  margin-top: 5px;
+}
+
+/* Main dashboard layout grid */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Min card width */
+  gap: 25px; /* Increased gap */
+  margin-top: 20px; /* Space below header */
+}
+
+/* Card styling - base for all sections */
+.card {
+  background-color: white;
+  padding: 20px 25px; /* Slightly more padding */
+  border-radius: 10px; /* More rounded */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #0056b3; /* Darker blue for titles */
+  border-bottom: 2px solid #e9ecef; /* Lighter border */
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+/* Summary Statistics specific styling */
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Min stat item width */
+    gap: 18px;
+    margin-bottom: 20px; /* If summary card has other content below stats */
+}
+
+.stat-item {
+    background-color: #f8f9fa; /* Very light grey */
+    padding: 18px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #dee2e6; /* Subtle border */
+    transition: background-color 0.2s ease;
+}
+
+.stat-item:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
+}
+
+.stat-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 2em; /* Larger number */
+    color: #007bff; /* Primary blue for numbers */
+    font-weight: 700;
+}
+
+.stat-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #495057; /* Dark grey text */
+    font-weight: 500;
+}
+
+/* List styling for EventLog and AlertLog */
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-height: 400px; /* Or desired height */
+  overflow-y: auto; /* Add scroll for long lists */
+  /* Custom scrollbar (optional, webkit only) */
+}
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+ul::-webkit-scrollbar-thumb {
+  background: #007bff; /* Or #888 for a more neutral color */
+  border-radius: 10px;
+}
+ul::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* Or #555 */
+}
+
+
+li {
+  background-color: #ffffff; /* White background for list items */
+  border: 1px solid #e0e0e0; /* Lighter border for list items */
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  line-height: 1.5; /* Better readability */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+li strong {
+    color: #343a40; /* Darker text for strong elements */
+    font-weight: 600;
+}
+
+li small {
+    display: block; /* Make small take full width */
+    margin-top: 5px;
+    color: #6c757d; /* Grey for timestamps */
+    font-size: 0.85em;
+}
+
+/* Alert item specific styling */
+.alert-item { /* Base style for all alerts */
+    background-color: #e6f7ff; /* Light blue */
+    border-left: 5px solid #007bff; /* Blue for general/info alerts */
+    color: #004085; /* Dark blue text */
+}
+
+.alert-item.unauthorized { /* For critical alerts like unauthorized exit */
+    background-color: #f8d7da; /* Light red */
+    border-left-color: #dc3545; /* Strong red */
+    color: #721c24; /* Dark red text */
+}
+
+.alert-item.unauthorized strong {
+    color: #721c24; /* Match text color for consistency */
+}
+
+.alert-item.warning { /* Example for a warning type alert */
+    background-color: #fff3cd; /* Light yellow */
+    border-left-color: #ffc107; /* Strong yellow */
+    color: #856404; /* Dark yellow text */
+}
+.alert-item.warning strong {
+    color: #856404;
+}
+
+/* Loading / No Data states */
+.card p { /* For "Loading..." or "No recent events." messages */
+    color: #6c757d;
+    font-style: italic;
+}

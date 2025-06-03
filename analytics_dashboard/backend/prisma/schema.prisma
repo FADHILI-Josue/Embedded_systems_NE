@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ParkingEvent {
+  id             String    @id @default(cuid())
+  plateNumber    String
+  entryTime      DateTime  @default(now())
+  exitTime       DateTime?
+  status         String    // "ENTERED", "EXITED_PAID", "EXITED_UNPAID_ATTEMPT"
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Alert {
+  id          String   @id @default(cuid())
+  plateNumber String?
+  message     String
+  type        String   // "UNAUTHORIZED_EXIT", "TAMPERING", "SYSTEM_ERROR"
+  timestamp   DateTime @default(now())
+}

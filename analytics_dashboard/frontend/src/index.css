@@ -1,0 +1,55 @@
+/* parking-analytics-frontend/src/index.css */
+
+/* Apply a natural box layout model to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Basic reset and body styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Light grey background for the whole page */
+  color: #333; /* Default text color */
+  line-height: 1.6; /* Default line height for better readability */
+}
+
+/* Remove default margin from React root */
+#root {
+  /* You can add display: flex; flex-direction: column; min-height: 100vh;
+     if you want the App component to fill the screen height */
+}
+
+/* Code block styling (if you use it anywhere) */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Optional: Improve focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-radius: 2px; /* Optional: match element's border-radius */
+}
+
+/* You can add more global styles here like typography, links, buttons etc. */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; /* Remove default top margin from headings */
+  font-weight: 600; /* Slightly bolder headings */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none; /* Remove underline from links by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
